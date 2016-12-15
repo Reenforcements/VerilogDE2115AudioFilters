@@ -41,10 +41,10 @@ Once the Wolfson IC had a clock, it was able to send and receive digital audio o
 
 ####Digital Filters
 
-Once a stream of samples was running through the FPGA, all that was left to do was modify them on their way to the DAC. This was accomplished using **digital filters**. Three filters were implemented: Low pass, high pass, and mid pass.
+Once a stream of samples was running through the FPGA, all that was left to do was modify them on their way to the DAC. This was accomplished using **digital filters**, which operate on the digital samples coming into the FPGA from the Wolfson IC. Three filters were implemented: Low pass, high pass, and mid pass. Each of the following pseudocodes were implemented in C before being implemented on the FPGA in order to test the code and tune the constants.
+
+The **mid pass** filter was based off the following pseudocode from [Wikipedia](https://en.wikipedia.org/wiki/Low-pass_filter).
 ```javascript
-	// Return RC low-pass filter output samples, given input samples,
- // time interval dt, and time constant RC
  function lowpass(real[0..n] x, real dt, real RC)
    var real[0..n] y
    var real α := dt / (RC + dt)
@@ -53,3 +53,16 @@ Once a stream of samples was running through the FPGA, all that was left to do w
        y[i] := α * x[i] + (1-α) * y[i-1]
    return y
 ```
+
+The **high pass** filter was also based off pseudocode from [Wikipedia](https://en.wikipedia.org/wiki/High-pass_filter).
+```javascript
+	function highpass(real[0..n] x, real dt, real RC)
+   var real[0..n] y
+   var real α := RC / (RC + dt)
+   y[0] := x[0]
+   for i from 1 to n
+     y[i] := α * y[i-1] + α * (x[i] - x[i-1])
+   return y
+```
+
+The **mid pass** filter was implemented using both the [high pass and low pass filter, according to E. R. Kanasewich](https://books.google.com/books?id=k8SSLy-FYagC&pg=PA260&dq=band-pass-filter#v=onepage&q=band-pass-filter&f=false).
