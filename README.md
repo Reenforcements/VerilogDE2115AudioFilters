@@ -41,7 +41,7 @@ Once the Wolfson IC had a clock, it was able to send and receive digital audio o
 ######A diagram of sending/receiving digital audio samples from the Wolfson IC, taken from the [Wolfson's data sheet](https://www.rockbox.org/wiki/pub/Main/DataSheets/WM8731_8731L.pdf)
 
 ####Visualizer
-A simple visualizer was created to show the current volume of the audio passing through the board. The louder the sound, the more LEDs in a row were lit up. The following algorithm was used:
+A simple visualizer was created to show the current volume of the audio passing through the board. The louder the sound, the more LEDs in a row were lit up. The following simple algorithm was used:
 ```C
 averaged = ((left + right) / 32'd2);
 for(i = 0; i < 16; i = i + 1)
@@ -53,9 +53,9 @@ end
 ####Digital Filters
 Once a stream of samples was running through the FPGA, all that was left to do was modify them on their way to the DAC. This was accomplished using **digital filters**, which operate on the digital samples coming into the FPGA from the Wolfson IC. Three filters were implemented: Low pass, high pass, and mid pass. 
 
-A low pass filter allows low freqency sounds to pass through unhindered while attenuating higher frequency sounds. If you pass music through a low pass filter, it will sound very "deep" and bass-like.
+A **low pass filter** allows low freqency sounds to pass through unhindered while attenuating higher frequency sounds. If you pass music through a low pass filter, it will sound very "deep" and bass-like.
 
-A high pass filter is similar, but it only allows higher frequency sounds to pass through and attenuates lower frequency sounds. This results in audio that sounds very "tinny".
+A **high pass filter** is similar, but it only allows higher frequency sounds to pass through and attenuates lower frequency sounds. This results in audio that sounds very "tinny".
 
 The mid pass filter is somewhat of a mix between the two. It only allows mid-frequency sounds to pass through while attenuating low and high frequency sounds. Because it allows a range of frequencies to pass through, this filter is usually called a **band pass filter**.
 
@@ -99,7 +99,10 @@ Here's a little sample of what the visualizer looks like when you play music thr
 For a demonstration of the filters, please see the "AudioSample.wav" in the root directory of the project. The progression of the filters is: unfiltered, high pass, low pass, mid pass, and unfiltered.
 
 ##Citations
-Citations were made throughout the document with appropriate links. A full list of sources consulted while developing this project are as follows:
+Citations were made throughout the document with appropriate links. A full list of sources consulted and resources used while developing this project are as follows:
+
+https://www.rockbox.org/wiki/pub/Main/DataSheets/WM8731_8731L.pdf
+
 https://en.wikipedia.org/wiki/Low-pass_filter
 
 https://en.wikipedia.org/wiki/High-pass_filter
@@ -109,3 +112,5 @@ http://www.dspguide.com/ch14/5.htm
 https://kiritchatterjee.wordpress.com/2014/11/10/a-simple-digital-low-pass-filter-in-c/
 
 https://books.google.com/books?id=k8SSLy-FYagC&pg=PA260&dq=band-pass-filter#v=onepage&q=band-pass-filter&f=false
+
+Altera for their "Audio Clock for DE-series Boards" and "RAM: 1 Port" modules.
