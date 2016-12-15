@@ -89,7 +89,7 @@ For each of the implemented filter modules, the 16 bit left and right audio chan
 
 ##Results
 ---
-The results were pretty good. The filters weren't top quality but they worked!
+The project was for the most part a success. Time did not allow for implementation of the echo filter, unfortunately. The filters that were implemented weren't top quality but they worked! They're probably fairly crude by today's audio standards. The mid pass filter was also somewhat strange, but it _seemed_ to work at least decently.
 
 ####Visualizer
 Here's a little sample of what the visualizer looks like when you play music through the board.
@@ -97,6 +97,9 @@ Here's a little sample of what the visualizer looks like when you play music thr
 
 ####Filters
 For a demonstration of the filters, please see the "AudioSample.wav" in the root directory of the project. The progression of the filters is: unfiltered, high pass, low pass, mid pass, and unfiltered.
+
+##Conclusion
+The DE2-115 board was utilized to perform digital signal processing on audio that was streamed through the board. The Wolfson WM8731 was initialized through the use of I<sup>2</sup>C. The WM8731 was clocked by the FPGA to allow for sending and receiving of digital samples from the IC. The FPGA was also configured to allow the user to modify the audio with a low, mid, or high pass filter as the audio passed through it. The visualizer looks pretty neat, too.
 
 ##Citations
 Citations were made throughout the document with appropriate links. A full list of sources consulted and resources used while developing this project are as follows:
