@@ -1,10 +1,10 @@
 
 
 #Digital Filters and Audio Effects on the DE2-115 FPGA
-##Austyn Larkin
+###by Austyn Larkin
 
 ##Description
-Need to add what Richmond wrote. Don't have time yet.
+The goal of the project is to use the **DE2-115 FPGA** to perform digital filtering on audio streamed through the board. The board's included **line-in** and **line-out** audio jacks will be used in combination with the **Wolfson WM8731 IC** to convert the audio from analog to digital and back. Digital filtering algorithms such as **low, mid, and high pass filters** will be implemented on the FPGA that will alter the digital audio samples as they are passed to the FPGA by the Wolfson IC. The modified audio will then be sent back to the Woflson IC to be converted to analog and played through the line-out audio jack.
 
 ##Background Information
 ---
@@ -97,7 +97,7 @@ Here's a little sample of what the visualizer looks like when you play music thr
 ![Visualizer Results](http://i.imgur.com/Ace3hHC.gif)
 
 ####Filters
-For a demonstration of the filters, please see the "AudioSample.wav" in the root directory of the project. The progression of the filters is: unfiltered, high pass, low pass, mid pass, and unfiltered.
+For a demonstration of the filters, please [click here.](https://dl.dropboxusercontent.com/u/27236864/FPGA/AudioSample.wav) The progression of the filters is: unfiltered, high pass, low pass, mid pass, and unfiltered.
 
 ##Conclusion
 The DE2-115 board was utilized to perform digital signal processing on audio that was streamed through the board. The Wolfson WM8731 was initialized through the use of I<sup>2</sup>C. The WM8731 was clocked by the FPGA to allow for sending and receiving of digital samples from the IC. The FPGA was also configured to allow the user to modify the audio with a low, mid, or high pass filter as the audio passed through it. The visualizer looks pretty neat, too.
