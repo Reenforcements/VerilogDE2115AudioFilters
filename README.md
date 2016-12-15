@@ -10,7 +10,7 @@
 Audio is often transmitted as an **analog signal**. The DE2-115 board is equipped with several **3.5mm audio connectors** that can be utilized to input and output analog audio from the board. These are the same kind connectors running the same kinds of **analog audio signals** you'd find on a laptop or phone.
 ![Sample analog audio signals](http://i.imgur.com/aI0B9Tq.png)
 ######A picture of an analog audio signal
- The first step to applying effects to audio is getting the audio to the FPGA. When a source of audio is connected to the **Line-in audio jack**, it's sending an analog signal. Now, the FPGA can only work with **digital signals**. This means the signal is represented as a stream of binary numbers. Each of these numbers is called a **sample**.
+The first step to applying effects to audio is getting the audio to the FPGA. When a source of audio is connected to the **Line-in audio jack**, it's sending an analog signal. Now, the FPGA can only work with **digital signals**. This means the signal is represented as a stream of binary numbers. Each of these numbers is called a **sample**.
 ![A closeup of an analog signal](http://i.imgur.com/2pZBpMt.png)
 ######An extreme closeup of a digitalized analog audio signal. Each point represents a single sample.
 
@@ -43,11 +43,11 @@ Once the Wolfson IC had a clock, it was able to send and receive digital audio o
 ####Visualizer
 A simple visualizer was created to show the current volume of the audio passing through the board. The louder the sound, the more LEDs in a row were lit up. The following algorithm was used:
 ```C
-	averaged = ((left + right) / 32'd2);
-	for(i = 0; i < 16; i = i + 1)
-		begin
-			leds[i] = ( averaged > (2048*i) ) ? 1'b1 : 1'b0;
-		end
+averaged = ((left + right) / 32'd2);
+for(i = 0; i < 16; i = i + 1)
+begin
+leds[i] = ( averaged > (2048*i) ) ? 1'b1 : 1'b0;
+end
 ```
 
 ####Digital Filters
@@ -55,24 +55,24 @@ Once a stream of samples was running through the FPGA, all that was left to do w
 
 The **mid pass** filter was based off the following pseudocode from [Wikipedia](https://en.wikipedia.org/wiki/Low-pass_filter).
 ```javascript
- function lowpass(real[0..n] x, real dt, real RC)
-   var real[0..n] y
-   var real α := dt / (RC + dt)
-   y[0] := x[0]
-   for i from 1 to n
-       y[i] := α * x[i] + (1-α) * y[i-1]
-   return y
+function lowpass(real[0..n] x, real dt, real RC)
+var real[0..n] y
+var real α := dt / (RC + dt)
+y[0] := x[0]
+for i from 1 to n
+y[i] := α * x[i] + (1-α) * y[i-1]
+return y
 ```
 
 The **high pass** filter was also based off pseudocode from [Wikipedia](https://en.wikipedia.org/wiki/High-pass_filter).
 ```javascript
-	function highpass(real[0..n] x, real dt, real RC)
-   var real[0..n] y
-   var real α := RC / (RC + dt)
-   y[0] := x[0]
-   for i from 1 to n
-     y[i] := α * y[i-1] + α * (x[i] - x[i-1])
-   return y
+function highpass(real[0..n] x, real dt, real RC)
+var real[0..n] y
+var real α := RC / (RC + dt)
+y[0] := x[0]
+for i from 1 to n
+y[i] := α * y[i-1] + α * (x[i] - x[i-1])
+return y
 ```
 
 The **mid pass** filter was implemented using both the high pass and low pass filter by [feeding the result of the low pass filter into the high pass filter.](https://books.google.com/books?id=k8SSLy-FYagC&pg=PA260&dq=band-pass-filter#v=onepage&q=band-pass-filter&f=false)
