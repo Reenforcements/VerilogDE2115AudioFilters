@@ -6,7 +6,14 @@
 
 ##Background Information
 ---
-Audio is often transmitted as an **analog signal**. The DE2-115 board is equipped with several **3.5mm audio connectors** that can be utilized to input and output analog audio from the board. These are the same kind connectors running the same kinds of **analog audio signals** you'd find on a laptop or phone. The first step to applying effects to audio is getting the audio to the FPGA. When a source of audio is connected to the **Line-in audio jack**, it's sending an analog signal. Now, the FPGA can only work with **digital signals**. This means the signal is represented as a stream of binary numbers. Each of these numbers is called a **sample**. This is where the **Wolfson WM8731** IC (integrated circuit) comes into play. This IC has the ability to convert an analog signal to the stream of digital samples the FPGA can use. These samples don't stay on the FPGA for long. As soon as the FPGA modifies them, using something called a **digital filter**,  they're sent back to the **Wolfson** IC. The IC then converts these digital samples back to an analog signal and sends the signal to the **Line-out audio jack**. From there, any standard audio output device such as headphones or speakers can be connected to hear the modified sound.
+Audio is often transmitted as an **analog signal**. The DE2-115 board is equipped with several **3.5mm audio connectors** that can be utilized to input and output analog audio from the board. These are the same kind connectors running the same kinds of **analog audio signals** you'd find on a laptop or phone.
+![Sample analog audio signals](http://i.imgur.com/aI0B9Tq.png)
+######A picture of an analog audio signal
+ The first step to applying effects to audio is getting the audio to the FPGA. When a source of audio is connected to the **Line-in audio jack**, it's sending an analog signal. Now, the FPGA can only work with **digital signals**. This means the signal is represented as a stream of binary numbers. Each of these numbers is called a **sample**.
+![A closeup of an analog signal](http://i.imgur.com/2pZBpMt.png)
+######An extreme closeup of a digitalized analog audio signal. Each point represents a single sample.
+
+This is where the **Wolfson WM8731** IC (integrated circuit) comes into play. This IC has the ability to convert an analog signal to the stream of digital samples the FPGA can use. These samples don't stay on the FPGA for long. As soon as the FPGA modifies them, using something called a **digital filter**,  they're sent back to the **Wolfson** IC. The IC then converts these digital samples back to an analog signal and sends the signal to the **Line-out audio jack**. From there, any standard audio output device such as headphones or speakers can be connected to hear the modified sound.
 
 
 
@@ -31,3 +38,18 @@ Once the Wolfson IC had a clock, it was able to send and receive digital audio o
 
 ![Sending and receving audio from the Wolfson IC](http://i.imgur.com/MicVc7Y.png)
 ######A diagram of sending/receiving digital audio samples from the Wolfson IC, taken from the [Wolfson's data sheet](https://www.rockbox.org/wiki/pub/Main/DataSheets/WM8731_8731L.pdf)
+
+####Digital Filters
+
+Once a stream of samples was running through the FPGA, all that was left to do was modify them on their way to the DAC. This was accomplished using **digital filters**. Three filters were implemented: Low pass, high pass, and mid pass.
+```javascript
+	// Return RC low-pass filter output samples, given input samples,
+ // time interval dt, and time constant RC
+ function lowpass(real[0..n] x, real dt, real RC)
+   var real[0..n] y
+   var real α := dt / (RC + dt)
+   y[0] := x[0]
+   for i from 1 to n
+       y[i] := α * x[i] + (1-α) * y[i-1]
+   return y
+```
