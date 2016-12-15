@@ -4,7 +4,7 @@
 ##Austyn Larkin
 
 ##Description
-Waiting on Richmond...
+Need to add what Richmond wrote. Don't have time yet.
 
 ##Background Information
 ---
