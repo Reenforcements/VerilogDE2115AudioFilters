@@ -1,0 +1,12 @@
+module AudioADC(
+input clk,//50Mhz
+input rst,//reset
+input AUD_BCLK,//Audio chip clock
+input AUD_ADCLRCK,//Will go high when ready for data.
+input [31:0]data,//The full data we want to send.
+
+output reg done,//Pulses high on done
+output reg AUD_DACDAT//The data to send out on each pulse.
+);
+
+endmodule

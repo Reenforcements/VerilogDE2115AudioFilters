@@ -1,0 +1,4 @@
+module AudioDAC(
+input clk,
+input rst,
+input [15:0]data,

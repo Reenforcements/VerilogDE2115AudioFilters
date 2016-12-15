@@ -1,0 +1,16 @@
+-- begin_signature
+-- AudioInit
+-- end_signature
+WIDTH=7;
+DEPTH=5;
+
+ADDRESS_RADIX=UNS;
+DATA_RADIX=BIN;
+
+CONTENT BEGIN
+	4 :	XXXXXXX;
+	3 :	0000100;
+	2 :	XXXXXXX;
+	1 :	XXXXXXX;
+	0 :	XXXXXXX;
+END;

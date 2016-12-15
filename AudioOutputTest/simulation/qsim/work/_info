@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/simulation/qsim
+vAudioOutputTest
+Z1 !s110 1480213528
+!i10b 1
+!s100 8PVKW2k<42dOI:YfbOEdY3
+Ie5hIABH0<b_o<_8ASd:4V3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1480213528
+8AudioOutputTest.vo
+FAudioOutputTest.vo
+L0 32
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1480213528.000000
+!s107 AudioOutputTest.vo|
+!s90 -work|work|AudioOutputTest.vo|
+!i113 1
+Z5 o-work work
+n@audio@output@test
+vAudioOutputTest_vlg_vec_tst
+R1
+!i10b 1
+!s100 2JM8DE2TWLI6`JZkA9P?G1
+IB3a>O0A7Jc`J^Qc3FMH:f0
+R2
+R0
+w1480213527
+8doneTest.vwf.vt
+FdoneTest.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 doneTest.vwf.vt|
+!s90 -work|work|doneTest.vwf.vt|
+!i113 1
+R5
+n@audio@output@test_vlg_vec_tst

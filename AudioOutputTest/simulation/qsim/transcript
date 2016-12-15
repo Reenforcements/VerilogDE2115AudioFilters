@@ -1,0 +1,37 @@
+# do AudioOutputTest.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:25:28 on Nov 26,2016
+# vlog -work work AudioOutputTest.vo 
+# -- Compiling module AudioOutputTest
+# 
+# Top level modules:
+# 	AudioOutputTest
+# End time: 21:25:28 on Nov 26,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 21:25:28 on Nov 26,2016
+# vlog -work work doneTest.vwf.vt 
+# -- Compiling module AudioOutputTest_vlg_vec_tst
+# 
+# Top level modules:
+# 	AudioOutputTest_vlg_vec_tst
+# End time: 21:25:29 on Nov 26,2016, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.AudioOutputTest_vlg_vec_tst -voptargs=""+acc"" 
+# Start time: 21:25:29 on Nov 26,2016
+# Loading work.AudioOutputTest_vlg_vec_tst
+# Loading work.AudioOutputTest
+# Loading cycloneive_ver.cycloneive_io_obuf
+# Loading cycloneive_ver.cycloneive_io_ibuf
+# Loading cycloneive_ver.cycloneive_clkctrl
+# Loading cycloneive_ver.cycloneive_mux41
+# Loading cycloneive_ver.cycloneive_ena_reg
+# Loading cycloneive_ver.cycloneive_lcell_comb
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# ** Note: $finish    : doneTest.vwf.vt(71)
+#    Time: 2 us  Iteration: 0  Instance: /AudioOutputTest_vlg_vec_tst
+# End time: 21:25:29 on Nov 26,2016, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

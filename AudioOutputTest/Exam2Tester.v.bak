@@ -1,0 +1,11 @@
+module Exam2Tester(clk, rst, sA, sB, sC, sD, 1A, 1B, 1C, 1D);
+
+endmodule
+
+module Exam2(clk, rst, sA, sB, sC, sD, 1A, 1B, 1C, 1D);
+
+//Generate 60Hz
+
+
+
+endmodule

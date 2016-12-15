@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element audio_pll_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="EP4CE115F29C7" />
+ <parameter name="deviceFamily" value="Cyclone IV E" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="audio_clk"
+   internal="audio_pll_0.audio_clk"
+   type="clock"
+   dir="start">
+  <port name="audio_clk_clk" internal="audio_clk_clk" />
+ </interface>
+ <interface name="ref_clk" internal="audio_pll_0.ref_clk" type="clock" dir="end">
+  <port name="ref_clk_clk" internal="ref_clk_clk" />
+ </interface>
+ <interface
+   name="ref_reset"
+   internal="audio_pll_0.ref_reset"
+   type="reset"
+   dir="end">
+  <port name="ref_reset_reset" internal="ref_reset_reset" />
+ </interface>
+ <interface
+   name="reset_source"
+   internal="audio_pll_0.reset_source"
+   type="reset"
+   dir="start">
+  <port name="reset_source_reset" internal="reset_source_reset" />
+ </interface>
+ <module
+   name="audio_pll_0"
+   kind="altera_up_avalon_audio_pll"
+   version="15.1"
+   enabled="1"
+   autoexport="1">
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="audio_clk_freq" value="12.288" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="gui_refclk" value="50.0" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

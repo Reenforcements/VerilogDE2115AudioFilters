@@ -1,0 +1,12 @@
+module Echo(
+input clk,
+input rst,
+input AUD_BCLK,
+input AUD_DACLRCK,
+input AUD_ADCLRCK,
+input [31:0]audioIn,
+
+output reg [31:0]audioOut
+);
+
+endmodule

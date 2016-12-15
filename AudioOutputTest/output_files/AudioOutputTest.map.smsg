@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at AudioInit.v(52): always construct contains both blocking and non-blocking assignments File: C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioInit.v Line: 52
+Info (10281): Verilog HDL Declaration information at AudioDac.v(11): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioDac.v Line: 11
+Info (10281): Verilog HDL Declaration information at AudioADC.v(11): object "done" differs only in case from object "DONE" in the same scope File: C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioADC.v Line: 11

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2016.12.06.15:19:02"
+ outputDirectory="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE115F29C7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REF_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REF_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REF_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="audio_clk" kind="clock" start="1">
+   <property name="associatedDirectClock" value="" />
+   <property name="clockRate" value="12288000" />
+   <property name="clockRateKnown" value="true" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="audio_clk_clk" direction="output" role="clk" width="1" />
+  </interface>
+  <interface name="ref_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="ref_clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="ref_reset" kind="reset" start="0">
+   <property name="associatedClock" value="ref_clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="ref_reset_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="reset_source" kind="reset" start="1">
+   <property name="associatedClock" value="" />
+   <property name="associatedDirectReset" value="" />
+   <property name="associatedResetSinks" value="none" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_source_reset" direction="output" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="AudioClocker:1.0:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1481055541,AUTO_REF_CLK_CLOCK_DOMAIN=-1,AUTO_REF_CLK_CLOCK_RATE=-1,AUTO_REF_CLK_RESET_DOMAIN=-1,AUTO_UNIQUE_ID=(altera_up_avalon_audio_pll:15.1:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_SPEEDGRADE=7,audio_clk_freq=12.288,device_family=Cyclone IV E,gui_refclk=50.0,refclk=50.0(altera_up_altpll:15.1:DEVICE_FAMILY=Cyclone IV,OUTCLK0_DIV=297,OUTCLK0_MULT=73,OUTCLK1_DIV=1,OUTCLK1_MULT=1,OUTCLK2_DIV=1,OUTCLK2_MULT=1,PHASE_SHIFT=0,audio_clk_freq=12.288,gui_device_family=Cyclone IV E,type=Audio,video_out=4.3&quot; LCD (TRDB_LTM))(altera_up_avalon_reset_from_locked_signal:15.1:)(conduit:16.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0))"
+   instancePathKey="AudioClocker"
+   kind="AudioClocker"
+   version="1.0"
+   name="AudioClocker">
+  <parameter name="AUTO_GENERATION_ID" value="1481055541" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_REF_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_REF_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_REF_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/AudioClocker.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/AudioClocker_audio_pll_0.v"
+       type="VERILOG" />
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_altpll.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_avalon_audio_pll/altera_up_avalon_audio_pll_hw.tcl" />
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_altpll/altera_up_altpll_hw.tcl" />
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_avalon_reset_from_locked_signal/altera_up_avalon_reset_from_locked_signal_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:AudioClocker "AudioClocker"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="AudioClocker"><![CDATA["<b>AudioClocker</b>" reuses <b>altera_up_avalon_audio_pll</b> "<b>submodules/AudioClocker_audio_pll_0</b>"]]></message>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:altera_up_avalon_audio_pll "submodules/AudioClocker_audio_pll_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>1</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="audio_pll_0"><![CDATA["<b>audio_pll_0</b>" reuses <b>altera_up_altpll</b> "<b>submodules/altera_up_altpll</b>"]]></message>
+   <message level="Debug" culprit="audio_pll_0"><![CDATA["<b>audio_pll_0</b>" reuses <b>altera_up_avalon_reset_from_locked_signal</b> "<b>submodules/altera_up_avalon_reset_from_locked_signal</b>"]]></message>
+   <message level="Info" culprit="audio_pll_0"><![CDATA["<b>AudioClocker</b>" instantiated <b>altera_up_avalon_audio_pll</b> "<b>audio_pll_0</b>"]]></message>
+   <message level="Debug" culprit="AudioClocker">queue size: 1 starting:altera_up_altpll "submodules/altera_up_altpll"</message>
+   <message level="Info" culprit="audio_pll"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_altpll</b> "<b>audio_pll</b>"]]></message>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:altera_up_avalon_reset_from_locked_signal "submodules/altera_up_avalon_reset_from_locked_signal"</message>
+   <message level="Info" culprit="reset_from_locked"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_avalon_reset_from_locked_signal</b> "<b>reset_from_locked</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_audio_pll:15.1:AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_SPEEDGRADE=7,audio_clk_freq=12.288,device_family=Cyclone IV E,gui_refclk=50.0,refclk=50.0(altera_up_altpll:15.1:DEVICE_FAMILY=Cyclone IV,OUTCLK0_DIV=297,OUTCLK0_MULT=73,OUTCLK1_DIV=1,OUTCLK1_MULT=1,OUTCLK2_DIV=1,OUTCLK2_MULT=1,PHASE_SHIFT=0,audio_clk_freq=12.288,gui_device_family=Cyclone IV E,type=Audio,video_out=4.3&quot; LCD (TRDB_LTM))(altera_up_avalon_reset_from_locked_signal:15.1:)(conduit:16.0:endPort=,endPortLSB=0,startPort=,startPortLSB=0,width=0)"
+   instancePathKey="AudioClocker:.:audio_pll_0"
+   kind="altera_up_avalon_audio_pll"
+   version="15.1"
+   name="AudioClocker_audio_pll_0">
+  <parameter name="gui_refclk" value="50.0" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="refclk" value="50.0" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <parameter name="audio_clk_freq" value="12.288" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/AudioClocker_audio_pll_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_altpll.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_avalon_audio_pll/altera_up_avalon_audio_pll_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_altpll/altera_up_altpll_hw.tcl" />
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_avalon_reset_from_locked_signal/altera_up_avalon_reset_from_locked_signal_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="AudioClocker" as="audio_pll_0" />
+  <messages>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:altera_up_avalon_audio_pll "submodules/AudioClocker_audio_pll_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>1</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="audio_pll_0"><![CDATA["<b>audio_pll_0</b>" reuses <b>altera_up_altpll</b> "<b>submodules/altera_up_altpll</b>"]]></message>
+   <message level="Debug" culprit="audio_pll_0"><![CDATA["<b>audio_pll_0</b>" reuses <b>altera_up_avalon_reset_from_locked_signal</b> "<b>submodules/altera_up_avalon_reset_from_locked_signal</b>"]]></message>
+   <message level="Info" culprit="audio_pll_0"><![CDATA["<b>AudioClocker</b>" instantiated <b>altera_up_avalon_audio_pll</b> "<b>audio_pll_0</b>"]]></message>
+   <message level="Debug" culprit="AudioClocker">queue size: 1 starting:altera_up_altpll "submodules/altera_up_altpll"</message>
+   <message level="Info" culprit="audio_pll"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_altpll</b> "<b>audio_pll</b>"]]></message>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:altera_up_avalon_reset_from_locked_signal "submodules/altera_up_avalon_reset_from_locked_signal"</message>
+   <message level="Info" culprit="reset_from_locked"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_avalon_reset_from_locked_signal</b> "<b>reset_from_locked</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_altpll:15.1:DEVICE_FAMILY=Cyclone IV,OUTCLK0_DIV=297,OUTCLK0_MULT=73,OUTCLK1_DIV=1,OUTCLK1_MULT=1,OUTCLK2_DIV=1,OUTCLK2_MULT=1,PHASE_SHIFT=0,audio_clk_freq=12.288,gui_device_family=Cyclone IV E,type=Audio,video_out=4.3&quot; LCD (TRDB_LTM)"
+   instancePathKey="AudioClocker:.:audio_pll_0:.:audio_pll"
+   kind="altera_up_altpll"
+   version="15.1"
+   name="altera_up_altpll">
+  <parameter name="OUTCLK0_DIV" value="297" />
+  <parameter name="OUTCLK2_MULT" value="1" />
+  <parameter name="PHASE_SHIFT" value="0" />
+  <parameter name="OUTCLK1_DIV" value="1" />
+  <parameter name="OUTCLK0_MULT" value="73" />
+  <parameter name="DEVICE_FAMILY" value="Cyclone IV" />
+  <parameter name="gui_device_family" value="Cyclone IV E" />
+  <parameter name="OUTCLK2_DIV" value="1" />
+  <parameter name="OUTCLK1_MULT" value="1" />
+  <generatedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_altpll.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_altpll/altera_up_altpll_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="AudioClocker_audio_pll_0" as="audio_pll" />
+  <messages>
+   <message level="Debug" culprit="AudioClocker">queue size: 1 starting:altera_up_altpll "submodules/altera_up_altpll"</message>
+   <message level="Info" culprit="audio_pll"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_altpll</b> "<b>audio_pll</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_reset_from_locked_signal:15.1:"
+   instancePathKey="AudioClocker:.:audio_pll_0:.:reset_from_locked"
+   kind="altera_up_avalon_reset_from_locked_signal"
+   version="15.1"
+   name="altera_up_avalon_reset_from_locked_signal">
+  <generatedFiles>
+   <file
+       path="C:/Users/Austyn Larkin/Desktop/FinalProject/AudioOutputTest/AudioClocker/synthesis/submodules/altera_up_avalon_reset_from_locked_signal.v"
+       type="VERILOG"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/altera_lite/16.0/ip/altera/university_program/clocks/altera_up_avalon_reset_from_locked_signal/altera_up_avalon_reset_from_locked_signal_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="AudioClocker_audio_pll_0" as="reset_from_locked" />
+  <messages>
+   <message level="Debug" culprit="AudioClocker">queue size: 0 starting:altera_up_avalon_reset_from_locked_signal "submodules/altera_up_avalon_reset_from_locked_signal"</message>
+   <message level="Info" culprit="reset_from_locked"><![CDATA["<b>audio_pll_0</b>" instantiated <b>altera_up_avalon_reset_from_locked_signal</b> "<b>reset_from_locked</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

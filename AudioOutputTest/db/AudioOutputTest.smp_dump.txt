@@ -1,0 +1,39 @@
+
+State Machine - |AudioOutputTest|Echo:myEcho1|s
+Name s.BAD s.DONE s.STASH2 s.STASH1 s.STASH0 s.GET2 s.GET1 s.GET0 s.WAIT s.START 
+s.START 0 0 0 0 0 0 0 0 0 0 
+s.WAIT 0 0 0 0 0 0 0 0 1 1 
+s.GET0 0 0 0 0 0 0 0 1 0 1 
+s.GET1 0 0 0 0 0 0 1 0 0 1 
+s.GET2 0 0 0 0 0 1 0 0 0 1 
+s.STASH0 0 0 0 0 1 0 0 0 0 1 
+s.STASH1 0 0 0 1 0 0 0 0 0 1 
+s.STASH2 0 0 1 0 0 0 0 0 0 1 
+s.DONE 0 1 0 0 0 0 0 0 0 1 
+s.BAD 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |AudioOutputTest|AudioADC:myADC|s
+Name s.DONE s.BITS s.WAIT s.START s.BAD 
+s.START 0 0 0 0 0 
+s.WAIT 0 0 1 1 0 
+s.BITS 0 1 0 1 0 
+s.DONE 1 0 0 1 0 
+s.BAD 0 0 0 1 1 
+
+State Machine - |AudioOutputTest|AudioDAC:myDAC|s
+Name s.DONE s.BITS s.WAIT s.START s.BAD 
+s.START 0 0 0 0 0 
+s.WAIT 0 0 1 1 0 
+s.BITS 0 1 0 1 0 
+s.DONE 1 0 0 1 0 
+s.BAD 0 0 0 1 1 
+
+State Machine - |AudioOutputTest|AudioInit:myAudioInit|i2c:myI2c|errorReg
+Name errorReg.0101 errorReg.0100 errorReg.0011 errorReg.0010 errorReg.0001 errorReg.0000 errorReg.1111 
+errorReg.0000 0 0 0 0 0 0 0 
+errorReg.0001 0 0 0 0 1 1 0 
+errorReg.0010 0 0 0 1 0 1 0 
+errorReg.0011 0 0 1 0 0 1 0 
+errorReg.0100 0 1 0 0 0 1 0 
+errorReg.0101 1 0 0 0 0 1 0 
+errorReg.1111 0 0 0 0 0 1 1 

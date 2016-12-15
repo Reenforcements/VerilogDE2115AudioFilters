@@ -1,0 +1,213 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "AUD_DACDAT",
+					"strict" : false
+				},
+				{
+					"name" : "SDCLK",
+					"strict" : false
+				},
+				{
+					"name" : "errorLED",
+					"strict" : false
+				},
+				{
+					"name" : "initSuccessLED",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ss2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[0]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[1]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[2]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[3]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[4]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[5]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[6]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[7]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[8]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[9]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[10]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[11]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[12]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[13]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[14]",
+					"strict" : false
+				},
+				{
+					"name" : "redLEDs[15]",
+					"strict" : false
+				},
+				{
+					"name" : "SDAT",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "sw1",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "sw5",
+					"strict" : false
+				},
+				{
+					"name" : "sw4",
+					"strict" : false
+				},
+				{
+					"name" : "sw3",
+					"strict" : false
+				},
+				{
+					"name" : "sw2",
+					"strict" : false
+				},
+				{
+					"name" : "sw0",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tms",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tck",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdi",
+					"strict" : false
+				},
+				{
+					"name" : "altera_reserved_tdo",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

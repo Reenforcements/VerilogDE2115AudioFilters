@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Dec 14 19:36:32 2016
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : AudioOutputTest
+Top-level Entity Name : AudioOutputTest
+Family : Cyclone IV E
+Total logic elements : 4,659
+    Total combinational functions : 4,348
+    Dedicated logic registers : 1,091
+Total registers : 1091
+Total pins : 48
+Total virtual pins : 0
+Total memory bits : 1,049,600
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

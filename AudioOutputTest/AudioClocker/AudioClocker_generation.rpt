@@ -1,0 +1,17 @@
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate "C:\Users\Austyn Larkin\Desktop\FinalProject\AudioOutputTest\AudioClocker.qsys" --synthesis=VERILOG --output-directory="C:\Users\Austyn Larkin\Desktop\FinalProject\AudioOutputTest\AudioClocker\synthesis" --family="Cyclone IV E" --part=EP4CE115F29C7
+Progress: Loading AudioOutputTest/AudioClocker.qsys
+Progress: Reading input file
+Progress: Adding audio_pll_0 [altera_up_avalon_audio_pll 15.1]
+Progress: Parameterizing module audio_pll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: AudioClocker: Generating AudioClocker "AudioClocker" for QUARTUS_SYNTH
+Info: audio_pll_0: "AudioClocker" instantiated altera_up_avalon_audio_pll "audio_pll_0"
+Info: audio_pll: "audio_pll_0" instantiated altera_up_altpll "audio_pll"
+Info: reset_from_locked: "audio_pll_0" instantiated altera_up_avalon_reset_from_locked_signal "reset_from_locked"
+Info: AudioClocker: Done "AudioClocker" with 4 modules, 4 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
